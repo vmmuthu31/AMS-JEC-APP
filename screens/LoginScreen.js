@@ -4,6 +4,7 @@ import {
   Text,
   TextInput,
   StyleSheet,
+  Image,
   Button,
   TouchableOpacity,
 } from "react-native";
@@ -56,31 +57,43 @@ function LoginScreen() {
   };
 
   return (
-    <View style={styles.container}>
-      {/* Logo and title ... */}
-      <View style={styles.loginContainer}>
-        <Text style={styles.title}>Login here!</Text>
-        <TextInput
-          style={styles.input}
-          placeholder="Email address"
-          value={formData.email}
-          onChangeText={(value) => handleInputChange("email", value)}
+    <>
+      <View className="flex flex-row justify-center space-x-3 py-3 bg-[#009FF8]">
+        <Image
+          className="h-10 w-10"
+          source={{
+            uri: "https://blogger.googleusercontent.com/img/a/AVvXsEjmL38K-8tCjcNKGjvAGHeVHkyN8t1lo68bXI2oqe2WVp8RVuF9ombU-79T9guiG2Z4FRk18nhzTWz5-ZkPpy993uWl7D59MyfLyfz0I5d4fKH2XuKhSC0h9SqofVdxzM-lplb8s_pCCZk3sUyccrZEL3uWAkliNXGUWWX_uCg6txRFRASiN-24sUvaUT0",
+          }}
         />
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          value={formData.password}
-          onChangeText={(value) => handleInputChange("password", value)}
-          secureTextEntry
-        />
-        <Button title="Login" onPress={handleSubmit} />
-        <TouchableOpacity onPress={() => navigation.navigate("RegisterScreen")}>
-          <Text style={styles.registerText}>
-            Don’t have an account? Sign up!
-          </Text>
-        </TouchableOpacity>
+        <Text className="pt-1 text-white font-bold text-xl">JEC-AMS</Text>
       </View>
-    </View>
+      <View style={styles.container}>
+        <View style={styles.loginContainer}>
+          <Text style={styles.title}>Login here!</Text>
+          <TextInput
+            style={styles.input}
+            placeholder="Email address"
+            value={formData.email}
+            onChangeText={(value) => handleInputChange("email", value)}
+          />
+          <TextInput
+            style={styles.input}
+            placeholder="Password"
+            value={formData.password}
+            onChangeText={(value) => handleInputChange("password", value)}
+            secureTextEntry
+          />
+          <Button title="Login" onPress={handleSubmit} />
+          <TouchableOpacity
+            onPress={() => navigation.navigate("RegisterScreen")}
+          >
+            <Text style={styles.registerText}>
+              Don’t have an account? Sign up!
+            </Text>
+          </TouchableOpacity>
+        </View>
+      </View>
+    </>
   );
 }
 

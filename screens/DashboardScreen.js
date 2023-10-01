@@ -18,20 +18,24 @@ function DashboardScreen() {
           style={styles.logo}
         />
         <Text style={styles.title}>JEC - AMS</Text>
-        <View style={styles.welcomeContainer}>
-          <Text style={styles.welcomeText}>Welcome {email?.slice(0, -10)}</Text>
-          <Text style={styles.departmentText}>Faculty of {department}</Text>
+        <View className="bg-white rounded-xl py-5 px-8 mt-10">
+          <Text className="text-center text-xl font-bold text-gray-700">
+            Welcome {email?.slice(0, -10)}
+          </Text>
+          <Text className="text-center  text-xl font-bold text-gray-700">
+            Faculty of {department}
+          </Text>
         </View>
       </View>
-      <View style={styles.buttonContainer}>
+      <View className="mt-20 mx-10">
         <Button
           title="View Attendance"
-          onPress={() => navigation.navigate("GetAttendance")}
+          onPress={() => navigation.navigate("GetAttendanceScreen")}
         />
         <Text style={styles.orText}>Or</Text>
         <Button
           title="Put Attendance"
-          onPress={() => navigation.navigate("AddAttendance")}
+          onPress={() => navigation.navigate("AddAttendanceScreen")}
         />
       </View>
     </View>
