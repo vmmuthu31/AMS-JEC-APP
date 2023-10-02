@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Ams-jec",
-    "slug": "Ams-jec",
+    "slug": "jec-ams",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -21,10 +21,17 @@
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#ffffff"
-      }
+      },
+      "package": "com.barfi_31.jecams"
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "extra": {
+      "eas": {
+        "projectId": "deab4de4-bdf4-415a-b462-69de618daa40"
+      }
+    },
+    "owner": "barfi_31"
   }
 }
